@@ -7,6 +7,8 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <!--weather-->
+    <link rel="stylesheet" href="css/weather-icons.css">
     <!-- google icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- my style css -->
@@ -14,12 +16,121 @@
 
 </head>
 <body>
-    <section class="weather-main">
-        <div class="weather-main_city">
+    <section class="weather">
+        <div class="weather-main">
             <input class="weather-main_search" type="text" placeholder="Введите название города">
             <a class="weather-main_btn" href="#">
                 <i class="material-icons">search</i>
             </a>
+        </div>
+
+        <div class="weather-main_info">
+            <div class="weather-now">
+                <div class="weather-now-left">
+                    <p class="city">Moscow</p>
+                    <p class="time">06:20<span>pm</span></p>
+                    <p class="icon">
+                        <i class="wi wi-night-sleet"></i>
+                        <span>28</span>&deg;
+                    </p>
+                </div>
+
+                <div class="weather-now-right">
+                    <p class="day-week">Tue<br><span class="day-month">Feb 28</span></p>
+                    <p class="forecast">Rain</p>
+                    <p class="downfall">
+                        <i class="wi wi-umbrella"></i>
+                        <span>85%</span>
+                    </p>
+                </div>
+            </div>
+            <div class="weather-week">
+                <div class="weather-week-day">
+                    <div class="weather-day">
+                        <p class="day">Wed</p>
+                        <i class="wi wi-night-sleet"></i>
+                        <p class="max-temp">
+                            <span>28</span>&deg;
+                        </p>
+                        <p class="min-temp">
+                            <span>22</span>&deg;
+                        </p>
+                    </div>
+                    <div class="weather-day">
+                        <p class="day">Wed</p>
+                        <i class="wi wi-night-sleet"></i>
+                        <p class="max-temp">
+                            <span>28</span>&deg;
+                        </p>
+                        <p class="min-temp">
+                            <span>22</span>&deg;
+                        </p>
+                    </div>
+                    <div class="weather-day">
+                        <p class="day">Wed</p>
+                        <i class="wi wi-night-sleet"></i>
+                        <p class="max-temp">
+                            <span>28</span>&deg;
+                        </p>
+                        <p class="min-temp">
+                            <span>22</span>&deg;
+                        </p>
+                    </div>
+                    <div class="weather-day">
+                        <p class="day">Wed</p>
+                        <i class="wi wi-night-sleet"></i>
+                        <p class="max-temp">
+                            <span>28</span>&deg;
+                        </p>
+                        <p class="min-temp">
+                            <span>22</span>&deg;
+                        </p>
+                    </div>
+                    <div class="weather-day">
+                        <p class="day">Wed</p>
+                        <i class="wi wi-night-sleet"></i>
+                        <p class="max-temp">
+                            <span>28</span>&deg;
+                        </p>
+                        <p class="min-temp">
+                            <span>22</span>&deg;
+                        </p>
+                    </div>
+                </div>
+
+                <div class="weather-week-realfell">
+                    <div class="realfell">
+                        <p>RealFell</p>
+                        <p class="real-temp">
+                            <span>24</span>&deg;
+                        </p>
+                    </div>
+                    <div class="realfell">
+                        <p>RealFell</p>
+                        <p class="real-temp">
+                            <span>24</span>&deg;
+                        </p>
+                    </div>
+                    <div class="realfell">
+                        <p>RealFell</p>
+                        <p class="real-temp">
+                            <span>24</span>&deg;
+                        </p>
+                    </div>
+                    <div class="realfell">
+                        <p>RealFell</p>
+                        <p class="real-temp">
+                            <span>24</span>&deg;
+                        </p>
+                    </div>
+                    <div class="realfell">
+                        <p>RealFell</p>
+                        <p class="real-temp">
+                            <span>24</span>&deg;
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

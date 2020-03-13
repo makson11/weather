@@ -1,11 +1,12 @@
-html, body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans';
 }
 
-.weather-main {
+.weather {
+    display: flex;
     background: url('/img/weather-fon.jpg') no-repeat;
     background-size: 100%;
     height: 50vh;
@@ -13,36 +14,34 @@ html, body {
 
 .weather-world{
     background: url('/img/weather-world.png') no-repeat;
+    background-size: 100%;
     height: 50vh;
 }
 
-.weather-main_city{
-    display: flex;
+.weather-main {
     position: absolute;
-    top: 25%;
-    left: 50%;
-    background-color: rgba(183, 183, 183, .6);
-    height: 40px;
+    display: flex;
+    background-color: rgba(163, 163, 163, .8);
     border-radius: 40px;
     padding: 10px;
+    top: 25%;
+    left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.weather-main_city:hover .weather-main_search {
-    width: 240px;
+    transition: 1s;
 }
 
 .weather-main_search{
-    align-items: center;
     background: none;
     border: none;
     color: #fff;
-    font-size: 16px;
     outline: none;
-    float: left;
-    padding: 0;
-    transition: .4s;
-    width: 0;
+    font-size: 16px;
+    width: 0px;
+    transition: 0.4s;
+}
+
+.weather-main:hover > .weather-main_search {
+    width: 240px;
 }
 
 .weather-main_search::placeholder{
@@ -51,17 +50,115 @@ html, body {
 
 .weather-main_btn {
     display: flex;
-    align-items: center;
     color: #fff;
-    background-color: rgba(183, 183, 183, 0);
+    align-items: center;
+    padding: 5px;
     justify-content: center;
-    text-decoration: none;
-    float: right;
-    height: 40px;
-    width: 40px;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
     animation: radial-pulse 1s infinite;
 }
+
+.weather-main_info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 1140px;
+    height: 250px;
+    transform: translateY(-100%);
+    transition: all .5s;
+}
+
+.weather-now {
+    display: flex;
+    background-color: rgba(0, 0, 0, .2);
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 30px;
+    flex-basis: 50%;
+}
+
+.weather-now-left {
+    flex-basis: 50%;
+}
+
+.weather-now-right {
+    flex-basis: 50%;
+}
+
+.time {
+    font-size: 26px;
+}
+
+.time span {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.icon {
+    color: #fff;
+    font-size: 60px;
+}
+
+.day-week {
+    font-size: 28px;
+    text-align: right;
+    padding-top: 10px;
+    line-height: 20px;
+}
+.day-month {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.forecast {
+    font-weight: normal;
+    text-align: right;
+    padding-top: 10px;
+}
+
+.downfall {
+    text-align: right;
+}
+
+.weather-week {
+    background-color: rgba(0, 0, 0, .5);
+    flex-basis: 50%;
+}
+
+.weather-week-day{
+    display: flex;
+}
+
+.weather-day {
+    color: #fff;
+    flex-basis: 20%;
+    font-size: 24px;
+    text-align: center;
+    padding: 32px 0 42px;
+}
+
+.day {
+    font-weight: 700;
+}
+
+.weather-week-realfell {
+    display: flex;
+    background-color: rgba(0, 255, 4, .3);
+}
+
+.realfell {
+    color: #fff;
+    flex-basis: 20%;
+    text-align: center;
+}
+
+
+
 
    
 @keyframes radial-pulse {
