@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,134 +10,142 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
     <!--weather-->
     <link rel="stylesheet" href="css/weather-icons.css">
+    <!-- weather wind -->
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
     <!-- google icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- my style css -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
-    <section class="weather">
-        <div class="weather-main">
-            <input class="weather-main_search" type="text" placeholder="Введите название города">
-            <a class="weather-main_btn" href="#">
-                <i class="material-icons">search</i>
-            </a>
-        </div>
-
-        <div class="weather-main_info">
-            <div class="weather-now">
-                <div class="weather-now-left">
-                    <p class="city">Moscow</p>
-                    <p class="time">06:20<span>pm</span></p>
-                    <p class="icon">
-                        <i class="wi wi-night-sleet"></i>
-                        <span>28</span>&deg;
-                    </p>
-                </div>
-
-                <div class="weather-now-right">
-                    <p class="day-week">Tue<br><span class="day-month">Feb 28</span></p>
-                    <p class="forecast">Rain</p>
-                    <p class="downfall">
-                        <i class="wi wi-umbrella"></i>
-                        <span>85%</span>
-                    </p>
-                </div>
+    <div class="weather">
+        <div class="container">
+            <div class="weather-main">
+                <input class="weather-main_search" type="text" placeholder="Введите название города" value="Khabarovsk">
+                <a class="weather-main_btn" href="#">
+                    <i class="material-icons">search</i>
+                </a>
             </div>
-            <div class="weather-week">
-                <div class="weather-week-day">
-                    <div class="weather-day">
-                        <p class="day">Wed</p>
-                        <i class="wi wi-night-sleet"></i>
-                        <p class="max-temp">
+
+            <div class="weather-main_info">
+                <div class="weather-now">
+                    <div class="weather-now-left">
+                        <p class="city">Moscow</p>
+                        <div class="time">
+                            <p class="sunrise">Sunrise <i class="wi wi-sunrise"></i> <span>08:08:08</span><span
+                                    class="suffix am">AM</span></p>
+                            <p class="sunset">Sunset <i class="wi wi-sunset"></i> <span>08:08:08</span><span
+                                    class="suffix pm">PM</span></p>
+                        </div>
+                        <p class="icon temp">
+                            <i class="wi"></i>
                             <span>28</span>&deg;
-                        </p>
-                        <p class="min-temp">
-                            <span>22</span>&deg;
                         </p>
                     </div>
-                    <div class="weather-day">
-                        <p class="day">Wed</p>
-                        <i class="wi wi-night-sleet"></i>
-                        <p class="max-temp">
-                            <span>28</span>&deg;
-                        </p>
-                        <p class="min-temp">
-                            <span>22</span>&deg;
-                        </p>
-                    </div>
-                    <div class="weather-day">
-                        <p class="day">Wed</p>
-                        <i class="wi wi-night-sleet"></i>
-                        <p class="max-temp">
-                            <span>28</span>&deg;
-                        </p>
-                        <p class="min-temp">
-                            <span>22</span>&deg;
-                        </p>
-                    </div>
-                    <div class="weather-day">
-                        <p class="day">Wed</p>
-                        <i class="wi wi-night-sleet"></i>
-                        <p class="max-temp">
-                            <span>28</span>&deg;
-                        </p>
-                        <p class="min-temp">
-                            <span>22</span>&deg;
-                        </p>
-                    </div>
-                    <div class="weather-day">
-                        <p class="day">Wed</p>
-                        <i class="wi wi-night-sleet"></i>
-                        <p class="max-temp">
-                            <span>28</span>&deg;
-                        </p>
-                        <p class="min-temp">
-                            <span>22</span>&deg;
+
+                    <div class="weather-now-right">
+                        <p class="day"><span class="day-week">Tue</span><br><span class="day-month">Feb 28</span></p>
+                        <p class="forecast">Rain</p>
+                        <p class="downfall">
+                            <i class="wi wi-umbrella"></i>
+                            <span>85</span>%
                         </p>
                     </div>
                 </div>
-
-                <div class="weather-week-realfell">
-                    <div class="realfell">
-                        <p>RealFell</p>
-                        <p class="real-temp">
-                            <span>24</span>&deg;
-                        </p>
-                    </div>
-                    <div class="realfell">
-                        <p>RealFell</p>
-                        <p class="real-temp">
-                            <span>24</span>&deg;
-                        </p>
-                    </div>
-                    <div class="realfell">
-                        <p>RealFell</p>
-                        <p class="real-temp">
-                            <span>24</span>&deg;
-                        </p>
-                    </div>
-                    <div class="realfell">
-                        <p>RealFell</p>
-                        <p class="real-temp">
-                            <span>24</span>&deg;
-                        </p>
-                    </div>
-                    <div class="realfell">
-                        <p>RealFell</p>
-                        <p class="real-temp">
-                            <span>24</span>&deg;
-                        </p>
+                <div class="weather-week">
+                    <div class="weather-week-day">
+                        <div class="weather-day">
+                            <p class="days">Wed</p>
+                            <i class="sky wi wi-night-sleet"></i>
+                            <p class="max-temp">
+                                <span>28</span>&deg;
+                            </p>
+                            <p class="wind-deg">
+                                <i class="deg wi wi-wind"></i>
+                                <i class="speed wi"></i>
+                            </p>
+                        </div>
+                        <div class="weather-day">
+                            <p class="days">Wed</p>
+                            <i class="sky wi wi-night-sleet"></i>
+                            <p class="max-temp">
+                                <span>28</span>&deg;
+                            </p>
+                            <p class="wind-deg">
+                                <i class="deg wi wi-wind"></i>
+                                <i class="speed wi "></i>
+                            </p>
+                        </div>
+                        <div class="weather-day">
+                            <p class="days">Wed</p>
+                            <i class="sky wi wi-night-sleet"></i>
+                            <p class="max-temp">
+                                <span>28</span>&deg;
+                            </p>
+                            <p class="wind-deg">
+                                <i class="deg wi wi-wind"></i>
+                                <i class="speed wi"></i>
+                            </p>
+                        </div>
+                        <div class="weather-day">
+                            <p class="days">Wed</p>
+                            <i class="sky wi wi-night-sleet"></i>
+                            <p class="max-temp">
+                                <span>28</span>&deg;
+                            </p>
+                            <p class="wind-deg">
+                                <i class="deg wi wi-wind"></i>
+                                <i class="speed wi"></i>
+                            </p>
+                        </div>
+                        <div class="weather-day">
+                            <p class="days">Wed</p>
+                            <i class="sky wi wi-night-sleet"></i>
+                            <p class="max-temp">
+                                <span>28</span>&deg;
+                            </p>
+                            <p class="wind-deg">
+                                <i class="deg wi wi-wind"></i>
+                                <i class="speed wi"></i>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="weather-world">
+    <div class="weather-world">
+        <div class="new-york city-world">
+            <p><span>2</span>New-York</p>
+        </div>
+        <div class="washington city-world">
+            <p>Washington<span>2</span></p>
+        </div>
+        <div class="london city-world">
+            <p>London<span>2</span></p>
+        </div>
+        <div class="moscow city-world">
+            <p><span>2</span>Moscow</p>
+        </div>
+        <div class="tokio city-world">
+            <p><span>2</span>Tokio</p>
+        </div>
+        <div class="sydney city-world">
+            <p><span>2</span>Sydney</p>
+        </div>
+        <div class="beijing city-world">
+            <p>Beijing<span>2</span></p>
+        </div>
+        <div class="rio-de-janeiro city-world">
+            <p><span>2</span>Rio de Janeiro</p>
+        </div>
+    </div>
 
-    </section>
     <script src="js/script.js"></script>
+    <script src="js/open-weather.js"></script>
 </body>
+
 </html>
