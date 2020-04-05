@@ -3,9 +3,8 @@ let arrId = [5128581, 5815135, 2643743, 524901, 1850147, 3451190, 1816670, 34511
 for (let i = 0; i < arrId.length; i++) {
   fetch('http://api.openweathermap.org/data/2.5/weather?id=' + arrId[i] + '&appid=4acd770294db9107a96165f4020decc5')
     .then(resp => resp.json())
-    .then(function (data) {
-      console.log(data);
 
+    .then(function (data) {
       let cityWorld = document.querySelectorAll('.city-world span');
 
       for (let j = 0; j < cityWorld.length; j++) {
@@ -16,25 +15,37 @@ for (let i = 0; i < arrId.length; i++) {
     });
 };
 
-
 btn.addEventListener('click', () => {
+
   fetch('http://api.openweathermap.org/data/2.5/weather?q=' + search.value + '&appid=4acd770294db9107a96165f4020decc5')
-    .then(response => response.json())
-    .then(function (data) {
-      console.log(data);
+    .then(
+      function (response) {
+        if (response.status !== 200) {
+          document.querySelector('.error-window').style.transform = 'translate(-50%, 0%)';
+        }
+        
+        search.onfocus = function(){
+          document.querySelector('.error-window').style.transform = 'translate(-50%, -200%)';
+        }
 
-      let newData = new Date().toDateString();
+        response.json().then(function (data) {
+          let newData = new Date().toDateString();
+          document.querySelector('.city').textContent = data.name;
+          document.querySelector('.sunrise span').textContent = msToTime(data.sys.sunrise);
+          document.querySelector('.sunset span').textContent = msToTime(data.sys.sunset);
+          getIconWeather(data.weather[0].description, document.querySelector('.icon i'));
+          document.querySelector('.forecast').textContent = data.weather[0].main;
+          document.querySelector('.temp span').textContent = Math.floor(data.main.temp - 273.15);
+          document.querySelector('.humidity span').textContent = data.main.humidity;
+          document.querySelector('.day-week').textContent = newData.substr(0, 3);
+          document.querySelector('.day-month').textContent = newData.substr(4, 6);
 
-      document.querySelector('.city').textContent = data.name;
-      document.querySelector('.sunrise span').textContent = msToTime(data.sys.sunrise);
-      document.querySelector('.sunset span').textContent = msToTime(data.sys.sunset);
-      getIconWeather(data.weather[0].description, document.querySelector('.icon i'));
-      document.querySelector('.forecast').textContent = data.weather[0].main;
-      document.querySelector('.temp span').textContent = Math.floor(data.main.temp - 273.15);
-      document.querySelector('.downfall span').textContent = data.main.humidity;
-      document.querySelector('.day-week').textContent = newData.substr(0, 3);
-      document.querySelector('.day-month').textContent = newData.substr(4, 6);
-    });
+          setTimeout(function () {
+            main.style.transform = 'translate(-3000%, -50%)';
+            info.style.transform = 'translateY(0)';
+          }, 500);
+        });
+      });
 
   fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + search.value + '&appid=4acd770294db9107a96165f4020decc5')
     .then(resp => resp.json())

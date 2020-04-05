@@ -18,7 +18,6 @@
 }
 
 .weather-world {
-    display: block;
     position: relative;
     background-color: #E7E7E7;
     background: url('../img/weather-world.png') no-repeat;
@@ -75,7 +74,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 1140px;
+    max-width: 1140px;
     height: 250px;
     transform: translateY(-200%);
     transition: all 1s;
@@ -138,7 +137,7 @@
     padding-top: 10px;
 }
 
-.downfall {
+.humidity {
     text-align: right;
 }
 
@@ -236,13 +235,33 @@
     left: 42%;
 }
 
+.error-window {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 50px;
+    transform: translate(-50%, -200%);
+    transition: all .5s;
+}
 
-@media (max-width: 803px) {
+
+@media (max-width: 785px) {
+    .weather {
+        height: 100vh;
+    }
 
     .weather-now,
     .weather-week {
         margin: 0 auto;
         min-width: 393px;
+    }
+
+    .weather-world {
+        display: none;
     }
 
 }
